@@ -1,0 +1,6 @@
+$data = [
+    'name' => 'Alex',
+    'role' => 'admin'
+];
+
+error_log(print_r($data, true));
