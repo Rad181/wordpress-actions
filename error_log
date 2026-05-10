@@ -4,3 +4,19 @@ $data = [
 ];
 
 error_log(print_r($data, true));
+
+
+function my_log($data) {
+
+    $file = __DIR__ . '/my-log.txt';
+
+    if (is_array($data) || is_object($data)) {
+        $data = print_r($data, true);
+    }
+
+    file_put_contents(
+        $file,
+        '[' . date('Y-m-d H:i:s') . '] ' . $data . PHP_EOL,
+        FILE_APPEND
+    );
+}
